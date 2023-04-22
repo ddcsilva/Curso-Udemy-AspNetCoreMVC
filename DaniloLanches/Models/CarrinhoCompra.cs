@@ -108,5 +108,13 @@ namespace DaniloLanches.Models
                        .Include(s => s.Lanche)
                        .ToList());
         }
+
+        public decimal GetCarrinhoCompraTotal()
+        {
+            // Retorna o total do carrinho de compras
+            return _context.CarrinhoCompraItens
+                .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                .Select(c => c.Lanche.Preco * c.Quantidade).Sum();
+        }
     }
 }
