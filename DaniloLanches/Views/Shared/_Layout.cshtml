@@ -33,6 +33,10 @@
                             <a class="nav-link" asp-area="" asp-controller="Lanches" asp-action="List"><i
                                     class="fas fa-utensils"></i> Lanches</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Contato" asp-action="Index"><i
+                                    class="fas fa-envelope"></i> Contato</a>
+                        </li>
                         <li class="nav-item nav-item-cart">
                             @await Component.InvokeAsync("CarrinhoCompraResumo")
                         </li>
