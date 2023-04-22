@@ -1,5 +1,6 @@
 using DaniloLanches.Context;
 using DaniloLanches.Interfaces;
+using DaniloLanches.Models;
 using DaniloLanches.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Adiciona o serviço de repositório
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ILancheRepository, LancheRepository>();
+// Adiciona o serviço de carrinho de compras
+builder.Services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
 // Adiciona o serviço de acesso ao contexto HTTP
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -20,7 +23,6 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 // Adiciona os serviços necessários para o suporte de controladores e views no aplicativo ASP.NET Core
 builder.Services.AddControllersWithViews();
 
-// Adiciona os serviços necessários para o suporte de sessão
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 
