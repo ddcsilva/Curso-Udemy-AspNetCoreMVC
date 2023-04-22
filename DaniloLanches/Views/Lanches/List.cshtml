@@ -1,71 +1,19 @@
-@model IEnumerable<DaniloLanches.Models.Lanche>
+@model LancheListViewModel
 
-@{
-    ViewBag.Title = "Lanches";
-}
+<div>
+    <h2>@Model.CategoriaAtual</h2>
+</div>
 
-<h1>Lanches</h1>
-
-<p>
-    <a asp-action="Create">Criar Novo Lanche</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoCurta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DescricaoDetalhada)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Preco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImagemThumbnailUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LanchePreferido)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoCurta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Preco)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImagemUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImagemThumbnailUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LanchePreferido)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
-                </td>
-            </tr>
+<div class="container">
+    <div class="row">
+        @foreach (var lanche in Model.Lanches)
+        {
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <p><img src="@lanche.ImagemUrl" class="img-fluid"></p>
+                <h3>Preço: @lanche.Preco.ToString("C")</h3>
+                <h4>@lanche.Nome</h4>
+                <p>@lanche.DescricaoCurta</p>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>
