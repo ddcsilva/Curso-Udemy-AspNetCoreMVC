@@ -1,23 +1,46 @@
 using DaniloLanches.Interfaces;
+using DaniloLanches.Models;
 using DaniloLanches.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DaniloLanches.Controllers;
 
-public class LanchesController : Controller {
+public class LanchesController : Controller
+{
     private readonly ILancheRepository _lancheRepository;
 
     public LanchesController(ILancheRepository lancheRepository)
     {
-        _lancheRepository = lancheRepository;        
+        _lancheRepository = lancheRepository;
     }
 
-    public IActionResult List()
+    public IActionResult List(string categoria)
     {
-        var lanchesListViewModel = new LancheListViewModel();
-        lanchesListViewModel.Lanches = _lancheRepository.Lanches;
-        lanchesListViewModel.CategoriaAtual = "Categoria Atual";
+        string _categoria = categoria;
+        IEnumerable<Lanche> lanches;
+        string categoriaAtual = string.Empty;
 
-        return View(lanchesListViewModel);
+        if (string.IsNullOrEmpty(categoria))
+        {
+            lanches = _lancheRepository.Lanches.OrderBy(l => l.Id);
+            categoriaAtual = "Todos os lanches";
+        }
+        else
+        {
+            if (string.Equals("Normal", _categoria, StringComparison.OrdinalIgnoreCase))
+                lanches = _lancheRepository.Lanches.Where(l => l.Categoria.Nome.Equals("Normal")).OrderBy(l => l.Nome);
+            else
+                lanches = _lancheRepository.Lanches.Where(l => l.Categoria.Nome.Equals("Natural")).OrderBy(l => l.Nome);
+
+            categoriaAtual = _categoria;
+        }
+
+        var lancheListViewModel = new LancheListViewModel
+        {
+            Lanches = lanches,
+            CategoriaAtual = categoriaAtual
+        };
+
+        return View(lancheListViewModel);
     }
 }
