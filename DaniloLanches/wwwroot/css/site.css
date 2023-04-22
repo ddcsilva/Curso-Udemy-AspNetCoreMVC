@@ -1,5 +1,8 @@
+/* General */
 html {
   font-size: 14px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -8,56 +11,62 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding-bottom: 60px;
+  min-height: 100vh;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-}
-
+/* Navbar */
 .navbar-nav .nav-item {
   margin-left: 10px;
   margin-right: 10px;
 }
 
+/* Buttons */
 .btn-primary:hover, .btn-secondary:hover {
   filter: brightness(85%);
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
+/* Category Title */
 .category-title {
   font-weight: 500;
   font-size: 2rem;
   letter-spacing: 1px;
 }
 
+/* Navbar Brand */
 .navbar-brand {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 1px;
 }
 
+/* Main Content */
 main {
   margin-top: 30px;
 }
 
+/* Card */
 .card-img-top {
   height: 300px;
   object-fit: cover;
 }
 
+/* Carousel */
 #carouselLanches {
   margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #343a40;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
 }
