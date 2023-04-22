@@ -1,5 +1,8 @@
 using DaniloLanches.Context;
+using DaniloLanches.Interfaces;
 using DaniloLanches.Models;
+
+namespace DaniloLanches.Repositories;
 
 public class CategoriaRepository : ICategoriaRepository
 {
@@ -10,5 +13,6 @@ public class CategoriaRepository : ICategoriaRepository
         _context = contexto;
     }
 
+    // Retorna todas as categorias
     public IEnumerable<Categoria> Categorias => _context.Categorias;
 }

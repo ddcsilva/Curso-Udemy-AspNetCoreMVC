@@ -1,4 +1,5 @@
 using DaniloLanches.Models;
+namespace DaniloLanches.Interfaces;
 
 public interface ICategoriaRepository
 {
