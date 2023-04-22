@@ -1,4 +1,6 @@
 using DaniloLanches.Context;
+using DaniloLanches.Interfaces;
+using DaniloLanches.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Adiciona o serviço do banco de dados
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Adiciona o serviço de repositório
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ILancheRepository, LancheRepository>();
 
 builder.Services.AddControllersWithViews();
 
