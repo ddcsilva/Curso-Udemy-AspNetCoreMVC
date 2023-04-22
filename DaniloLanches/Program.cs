@@ -56,6 +56,11 @@ app.UseAuthorization();
 
 // Configura as rotas
 app.MapControllerRoute(
+    name: "categoriaFiltro",
+    pattern: "Lanches/{action}/{categoria?}",
+    defaults: new { Controller = "Lanches", action = "List" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
