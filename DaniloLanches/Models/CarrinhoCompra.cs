@@ -1,4 +1,5 @@
 using DaniloLanches.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace DaniloLanches.Models
 {
@@ -96,6 +97,16 @@ namespace DaniloLanches.Models
 
             // Retorna a quantidade do item do carrinho de compras
             return quantidadeLocal;
+        }
+
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
+        {
+            // Retorna os itens do carrinho de compras
+            return CarrinhoCompraItens ??
+                   (CarrinhoCompraItens = _context.CarrinhoCompraItens
+                       .Where(c => c.CarrinhoCompraId == CarrinhoCompraId)
+                       .Include(s => s.Lanche)
+                       .ToList());
         }
     }
 }
