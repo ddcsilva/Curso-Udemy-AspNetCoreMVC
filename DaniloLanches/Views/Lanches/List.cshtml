@@ -1,7 +1,7 @@
 @model LancheListViewModel
 
 <div>
-    <h2 class="mb-4">@Model.CategoriaAtual</h2>
+    <h2 class="mb-4 category-title">@Model.CategoriaAtual</h2>
 </div>
 
 <div class="container">
@@ -10,7 +10,7 @@
         {
             <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 shadow">
-                    <img src="@lanche.ImagemUrl" class="card-img-top" alt="@lanche.Nome">
+                    <img src="@lanche.ImagemUrl" class="card-img-top" alt="@lanche.Nome" aria-label="@lanche.Nome">
                     <div class="card-body">
                         <h4 class="card-title">@lanche.Nome</h4>
                         <h5 class="card-subtitle mb-2 text-muted">Preço: @lanche.Preco.ToString("C")</h5>
