@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using DaniloLanches.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,7 @@ namespace DaniloLanches.Models
             _context = context;
         }
 
+        [StringLength(200)]
         public string CarrinhoCompraId { get; set; }
 
         public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }

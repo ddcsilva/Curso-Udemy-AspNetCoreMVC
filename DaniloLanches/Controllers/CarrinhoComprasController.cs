@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DaniloLanches.Controllers
 {
-    public class CarrinhoCompraController : Controller
+    public class CarrinhoComprasController : Controller
     {
         private readonly ILancheRepository _lancheRepository;
         private readonly CarrinhoCompra _carrinhoCompra;
 
-        public CarrinhoCompraController(ILancheRepository lancheRepository, CarrinhoCompra carrinhoCompra)
+        public CarrinhoComprasController(ILancheRepository lancheRepository, CarrinhoCompra carrinhoCompra)
         {
             _lancheRepository = lancheRepository;
             _carrinhoCompra = carrinhoCompra;

@@ -70,3 +70,40 @@ main {
   text-align: center;
   color: #fff;
 }
+
+.navbar .fa-shopping-cart {
+  font-size: 1rem;
+  position: relative;
+  top: -2px;
+}
+
+.badge-light {
+  position: absolute;
+  top: 2px; 
+  right: -6px;
+  font-size: 0.7rem; 
+  background-color: #f8d7da;
+  color: #dc3545;
+  padding: 2px 6px;
+  border-radius: 12px; 
+  min-width: 20px;
+  text-align: center; 
+}
+
+.badge-adjust {
+  position: relative;
+  top: -10px;
+  left: 6px;
+}
+
+.nav-item-cart {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-cart {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

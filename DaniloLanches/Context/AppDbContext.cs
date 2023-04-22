@@ -10,5 +10,6 @@ public class AppDbContext : DbContext {
     // DbSet é uma coleção de entidades que representa uma tabela no banco de dados
     public DbSet<Categoria> Categorias { get; set; }
     public DbSet<Lanche> Lanches { get; set; }
+    public DbSet<CarrinhoCompra> CarrinhoCompras { get; set; }
     public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 }
