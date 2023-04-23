@@ -22,7 +22,7 @@ public class CarrinhoComprasController : Controller
     /// <summary>
     /// Método responsável por renderizar a view do carrinho de compras
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Retorna a view Index</returns>
     public IActionResult Index()
     {
         // Define os itens do carrinho de compras
@@ -44,8 +44,8 @@ public class CarrinhoComprasController : Controller
     /// Método responsável por adicionar um lanche ao carrinho de compras
     /// </summary>
     /// <param name="id">Id do lanche</param>
-    /// <returns></returns>
-    public RedirectToActionResult Adicionar(int id)
+    /// <returns>Retorna a view Index</returns>
+    public RedirectToActionResult AdicionarItem(int id)
     {
         // Define o lanche
         var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(l => l.Id == id);
@@ -54,10 +54,27 @@ public class CarrinhoComprasController : Controller
         if (lancheSelecionado != null)
         {
             // Adiciona o lanche ao carrinho de compras
-            _carrinhoCompra.AdicionarAoCarrinho(lancheSelecionado, 1);
+            _carrinhoCompra.AdicionarAoCarrinho(lancheSelecionado);
         }
 
         // Retorna a view
         return RedirectToAction("Index");
     }
+
+    /// <summary>
+    /// Método responsável por remover um lanche do carrinho de compras
+    /// </summary>
+    /// <param name="id">Id do lanche</param>`
+    /// <returns>Retorna a view Index</returns>
+    public IActionResult RemoverItem(int id)
+        {
+            var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(p => p.Id == id);
+
+            if (lancheSelecionado != null)
+            {
+                _carrinhoCompra.RemoverDoCarrinho(lancheSelecionado);
+            }
+
+            return RedirectToAction("Index");
+        }
 }

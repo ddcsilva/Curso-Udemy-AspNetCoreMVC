@@ -32,7 +32,7 @@ public class LancheRepository : ILancheRepository
     /// <summary>
     /// Método responsável por retornar o lanche pelo id
     /// </summary>
-    /// <param name="lancheId"></param>
+    /// <param name="id"></param>
     /// <returns>Lanche</returns>
-    public Lanche ObterLanchePorId(int lancheId) => _context.Lanches.FirstOrDefault(l => l.Id == lancheId);
+    public Lanche ObterLanchePorId(int id) => _context.Lanches.FirstOrDefault(l => l.Id == id);
 }

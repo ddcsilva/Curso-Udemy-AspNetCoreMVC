@@ -1,3 +1,5 @@
+
+
 using System.ComponentModel.DataAnnotations;
 using DaniloLanches.Context;
 using Microsoft.EntityFrameworkCore;
@@ -50,7 +52,7 @@ public class CarrinhoCompra
     /// <param name="lanche"></param>
     /// <param name="quantidade"></param>
     /// <returns></returns>
-    public void AdicionarAoCarrinho(Lanche lanche, int quantidade)
+    public void AdicionarAoCarrinho(Lanche lanche)
     {
         // Define o item do carrinho de compras
         var carrinhoCompraItem = _context.CarrinhoCompraItens.SingleOrDefault(
