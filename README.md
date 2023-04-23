@@ -1,4 +1,4 @@
-# Curso ASP.NET Core MVC - Meu Site
+# Curso ASP.NET Core MVC
 
 Este é um projeto de site desenvolvido com ASP.NET Core MVC, baseado no curso disponível na Udemy: [Curso de ASP.NET Core MVC - Criando um Site do Zero](https://www.udemy.com/course/curso-de-asp-net-core-mvc-criando-um-site-do-zero/). Este projeto contém implementações personalizadas e pode diferir do curso original.
 
