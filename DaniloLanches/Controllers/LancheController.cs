@@ -27,11 +27,7 @@ public class LanchesController : Controller
         }
         else
         {
-            if (string.Equals("Lanches", _categoria, StringComparison.OrdinalIgnoreCase))
-                lanches = _lancheRepository.Lanches.Where(l => l.Categoria.Nome.Equals("Lanches")).OrderBy(l => l.Nome);
-            else
-                lanches = _lancheRepository.Lanches.Where(l => l.Categoria.Nome.Equals("Bebidas")).OrderBy(l => l.Nome);
-
+            lanches = _lancheRepository.Lanches.Where(l => l.Categoria.Nome.Equals(categoria)).OrderBy(l => l.Nome);
             categoriaAtual = _categoria;
         };
 
