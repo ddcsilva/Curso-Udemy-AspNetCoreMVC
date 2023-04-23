@@ -30,10 +30,6 @@
                                     class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Lanches" asp-action="List"><i
-                                    class="fas fa-utensils"></i> Lanches</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Contato" asp-action="Index"><i
                                     class="fas fa-envelope"></i> Contato</a>
                         </li>
@@ -42,6 +38,7 @@
                         </li>
                     </ul>
                     <form class="d-flex">
+                        @await Component.InvokeAsync("CategoriaMenu")
                         <input class="form-control me-2" type="search" placeholder="Buscar lanche"
                             aria-label="Buscar lanche">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
