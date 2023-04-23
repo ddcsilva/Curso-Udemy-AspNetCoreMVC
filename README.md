@@ -6,9 +6,7 @@ Este é um projeto de site desenvolvido com ASP.NET Core MVC, baseado no curso d
 
 1. Certifique-se de ter instalado o [.NET SDK](https://dotnet.microsoft.com/download) em seu computador.
 
-2. Clone o repositório:
-
-git clone https://github.com/SEU_USUARIO/CursoAspNetCoreMVC.git
+2. Clone o repositório: `git clone https://github.com/SEU_USUARIO/CursoAspNetCoreMVC.git`
 
 3. Navegue até o diretório do projeto: `cd CursoAspNetCoreMVC`
 
