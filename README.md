@@ -14,7 +14,7 @@ Este é um projeto de site desenvolvido com ASP.NET Core MVC, baseado no curso d
 
 5. Compile e execute o projeto: `dotnet run`
 
-Agora, o site deve estar rodando em `http://localhost:5055`.
+Agora, o site deve estar rodando em `https://localhost:7017` ou `http://localhost:5055`.
 
 ## Contribuições
 
