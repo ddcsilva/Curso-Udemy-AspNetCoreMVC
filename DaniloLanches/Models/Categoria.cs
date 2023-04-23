@@ -3,12 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DaniloLanches.Models;
 
+/// <summary>
+/// Classe responsável por representar a categoria
+/// </summary>
 [Table("Categorias")]
 public class Categoria
 {
     [Key]
     public int Id { get; set; }
-    
+
     [StringLength(100, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 100 caracteres")]
     [Required(ErrorMessage = "Informe o nome da categoria")]
     [Display(Name = "Nome")]

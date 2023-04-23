@@ -9,8 +9,13 @@
             <p class="card-text">@Model.DescricaoCurta</p>
         </div>
         <div class="card-footer">
-            <a href="#" class="btn btn-primary">Ver detalhes</a>
-            <a href="#" class="btn btn-secondary">Adicionar ao carrinho</a>
+            <a class="btn btn-primary" asp-controller="Lanches" asp-action="Details" asp-route-Id="@Model.Id">
+                Ver detalhes
+            </a>
+            <a class="btn btn-secondary" asp-controller="CarrinhoCompras" asp-action="Adicionar"
+                asp-route-Id="@Model.Id">
+                Adicionar ao carrinho
+            </a>
         </div>
     </div>
 </div>

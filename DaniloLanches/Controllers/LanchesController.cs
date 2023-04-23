@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DaniloLanches.Controllers;
 
+/// <summary>
+/// Classe responsável por representar o controller de lanches
+/// </summary>
 public class LanchesController : Controller
 {
     private readonly ILancheRepository _lancheRepository;
@@ -14,6 +17,11 @@ public class LanchesController : Controller
         _lancheRepository = lancheRepository;
     }
 
+    /// <summary>
+    /// Método responsável por renderizar a view de listagem de lanches
+    /// </summary>
+    /// <param name="categoria"></param>
+    /// <returns></returns>
     public IActionResult List(string categoria)
     {
         string _categoria = categoria;
@@ -38,5 +46,22 @@ public class LanchesController : Controller
         };
 
         return View(lancheListViewModel);
+    }
+
+    /// <summary>
+    /// Método responsável por renderizar a view de detalhes do lanche
+    /// </summary>
+    /// <param name="Id"></param>
+    /// <returns></returns>
+    public IActionResult Details(int Id)
+    {
+        var lanche = _lancheRepository.Lanches.FirstOrDefault(l => l.Id == Id);
+
+        if (lanche == null)
+        {
+            return View("~/Views/Error/Error.cshtml");
+        }
+
+        return View(lanche);
     }
 }

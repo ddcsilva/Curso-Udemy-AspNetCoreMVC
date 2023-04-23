@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DaniloLanches.Repositories;
 
+/// <summary>
+/// Classe responsável por representar o repositório de lanches
+/// </summary>
 public class LancheRepository : ILancheRepository
 {
     private readonly AppDbContext _context;
@@ -14,12 +17,22 @@ public class LancheRepository : ILancheRepository
         _context = contexto;
     }
 
-    // Retorna todos os lanches
+    /// <summary>
+    /// Método responsável por retornar todos os lanches
+    /// </summary>
+    /// <returns>Lista de lanches</returns>
     public IEnumerable<Lanche> Lanches => _context.Lanches.Include(c => c.Categoria);
 
-    // Retorna os lanches preferidos
+    /// <summary>
+    /// Método responsável por retornar todos os lanches preferidos
+    /// </summary>
+    /// <returns>Lista de lanches preferidos</returns>
     public IEnumerable<Lanche> LanchesPreferidos => _context.Lanches.Where(p => p.LanchePreferido).Include(c => c.Categoria);
 
-    // Retorna um lanche pelo id
+    /// <summary>
+    /// Método responsável por retornar o lanche pelo id
+    /// </summary>
+    /// <param name="lancheId"></param>
+    /// <returns>Lanche</returns>
     public Lanche ObterLanchePorId(int lancheId) => _context.Lanches.FirstOrDefault(l => l.Id == lancheId);
 }

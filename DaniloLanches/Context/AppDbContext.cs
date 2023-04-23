@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DaniloLanches.Context;
 
-public class AppDbContext : DbContext {
+/// <summary>
+/// Classe responsável por representar o contexto do banco de dados
+/// </summary>
+public class AppDbContext : DbContext
+{
     // Construtor que recebe um objeto do tipo DbContextOptions
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 

@@ -6,6 +6,9 @@ using DaniloLanches.ViewModels;
 
 namespace DaniloLanches.Controllers;
 
+/// <summary>
+/// Classe responsável por representar o controller da home
+/// </summary>
 public class HomeController : Controller
 {
     private readonly ILancheRepository _lancheRepository;
@@ -15,6 +18,10 @@ public class HomeController : Controller
         _lancheRepository = lancheRepository;
     }
 
+    /// <summary>
+    /// Método responsável por renderizar a view da home
+    /// </summary>
+    /// <returns></returns>
     public IActionResult Index()
     {
         var homeViewModel = new HomeViewModel
@@ -25,6 +32,10 @@ public class HomeController : Controller
         return View(homeViewModel);
     }
 
+    /// <summary>
+    /// Método responsável por renderizar a view de erro
+    /// </summary>
+    /// <returns></returns>
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

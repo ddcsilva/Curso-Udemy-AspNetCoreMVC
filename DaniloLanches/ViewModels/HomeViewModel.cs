@@ -1,9 +1,11 @@
 using DaniloLanches.Models;
 
-namespace DaniloLanches.ViewModels
+namespace DaniloLanches.ViewModels;
+
+/// <summary>
+/// Classe responsável por representar o view model da home
+/// </summary>
+public class HomeViewModel
 {
-    public class HomeViewModel
-    {
-        public IEnumerable<Lanche> LanchesPreferidos { get; set; }
-    }
+    public IEnumerable<Lanche> LanchesPreferidos { get; set; }
 }

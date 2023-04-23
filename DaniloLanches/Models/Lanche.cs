@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DaniloLanches.Models;
 
+/// <summary>
+/// Classe responsável por representar o lanche
+/// </summary>
 [Table("Lanches")]
 public class Lanche
 {

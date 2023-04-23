@@ -2,6 +2,9 @@ using DaniloLanches.Models;
 
 namespace DaniloLanches.Interfaces;
 
+/// <summary>
+/// Interface responsável por representar o repositório de lanches
+/// </summary>
 public interface ILancheRepository
 {
     // Retorna todos os lanches

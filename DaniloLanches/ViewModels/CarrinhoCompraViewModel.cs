@@ -1,10 +1,12 @@
 using DaniloLanches.Models;
 
-namespace DaniloLanches.ViewModels
+/// <summary>
+/// Classe responsável por representar o view model do carrinho de compras
+/// </summary>
+namespace DaniloLanches.ViewModels;
+
+public class CarrinhoCompraViewModel
 {
-    public class CarrinhoCompraViewModel
-    {
-        public CarrinhoCompra CarrinhoCompra { get; set; }
-        public decimal CarrinhoCompraTotal { get; set; }
-    }
+    public CarrinhoCompra CarrinhoCompra { get; set; }
+    public decimal CarrinhoCompraTotal { get; set; }
 }
